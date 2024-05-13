@@ -15,7 +15,7 @@ def simple_md5(message):
     msg_len = f"{og_msg_len:064b}"
     message += msg_len
 
-    message_words = [int(message[i: i+32]) for i in range(0, len(message), 16)]
+    message_words = [int(message[i: i+32], 2) for i in range(0, len(message), 16)]
     A, B, C, D = [0x01234567, 0x89ABCDEF, 0xFEDCBA, 0x76543210]
     key = 0x1357ACDF
 
